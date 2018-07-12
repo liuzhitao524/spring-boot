@@ -1,13 +1,16 @@
 package com.hqins.demo.dao;
 
-import com.hqins.demo.domain.City;
 
+import com.hqins.demo.dto.CityDTO;
+import com.hqins.demo.vo.CityInfoVO;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface CityDao {
-    City findByName(@Param("cityName") String cityName);
-    void  deleteByName(@Param("cityName") String cityName);
-    void  insertOneCity(City city);
+    List<CityInfoVO> findByName(String cityName);
+    Integer  deleteByName(@Param("cityName") String cityName);
+    Integer  insertOneCity(CityDTO city);
 }

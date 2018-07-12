@@ -2,11 +2,16 @@ package com.hqins.demo.service.impl;
 
 import com.hqins.demo.dao.CityDao;
 import com.hqins.demo.domain.City;
+import com.hqins.demo.dto.CityDTO;
 import com.hqins.demo.service.CityService;
 
 
+import com.hqins.demo.vo.CityInfoVO;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 
 @Service
@@ -16,18 +21,16 @@ public class CityServiceImpl implements CityService {
     private CityDao cityDao;
 
     @Override
-    public City findCityByName(String name){
+    public List<CityInfoVO> findCityByName(String name){
         return cityDao.findByName(name);
     }
     @Override
-    public void  deleteCityByName(String name){
-         cityDao.deleteByName(name);
+    public Integer  deleteCityByName(String name){
+         return cityDao.deleteByName(name);
     }
 
-    @Override
-    public void  insertOneCity(City city){
-        cityDao.insertOneCity(city);
+    public boolean  insertOneCity(CityDTO city){
+       Integer id = cityDao.insertOneCity(city);
+       return StringUtils.isNotBlank(id.toString());
     }
-
-
 }
