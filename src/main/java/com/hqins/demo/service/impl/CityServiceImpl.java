@@ -19,5 +19,15 @@ public class CityServiceImpl implements CityService {
     public City findCityByName(String name){
         return cityDao.findByName(name);
     }
+    @Override
+    public void  deleteCityByName(String name){
+         cityDao.deleteByName(name);
+    }
+
+    @Override
+    public void  insertOneCity(City city){
+        cityDao.insertOneCity(city);
+    }
+
 
 }

@@ -11,11 +11,22 @@
     <sql id="Base_Column_List">
      id,province_id,city_name,description
     </sql>
+    <!-- Query  by cityname-->
     <select id="findByName" resultMap="BaseResultMap" parameterType="java.lang.String">
         select
         <include refid="Base_Column_List"/>
         from city
         where city_name=#{cityName}
     </select>
+    <!-- Delete by cityname-->
+    <delete id="deleteByName" parameterType="java.lang.String">
+        delete from city
+        where city_name=#{cityName}
+    </delete>
+
+    <!-- Insert city object-->
+    <insert id="insertOneCity" parameterType="com.hqins.demo.domain.City">
+        insert into city(province_id,city_name,description) values (#{provinceId},#{cityName},#{description})
+    </insert>
 
 </mapper>
