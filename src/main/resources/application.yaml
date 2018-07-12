@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    password: 12345
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/hqins?useSSL=false&useUnicode=true&characterEncoding=utf8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: lzt
+mybatis:
+  mapper-locations: classpath:mapper/*xml
+  type-aliases-package: com.hqins.demo.domain
