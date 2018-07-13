@@ -1,12 +1,12 @@
 package com.hqins.demo.controller;
 
-import com.alibaba.fastjson.JSON;
 import com.hqins.demo.common.DemoResult;
-import com.hqins.demo.domain.City;
+
 import com.hqins.demo.dto.CityDTO;
 import com.hqins.demo.service.CityService;
 
 import com.hqins.demo.vo.CityInfoVO;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
@@ -56,6 +56,11 @@ public class CityController {
         return demoResult;
     }
 
+    @RequestMapping(value = "/api/city",method = RequestMethod.PUT)
+    @ResponseBody
+    public Integer updateCity(@RequestBody CityDTO city){
+        return cityService.updateCities(city);
+    }
 
     @RequestMapping(value="/api/test",method = RequestMethod.GET)
     @ResponseBody

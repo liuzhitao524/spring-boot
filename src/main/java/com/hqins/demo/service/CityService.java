@@ -10,4 +10,5 @@ public interface CityService {
     List<CityInfoVO> findCityByName(String cityName);
     Integer  deleteCityByName(String cityName);
     boolean  insertOneCity(CityDTO city);
+    Integer     updateCities(CityDTO city);
 }

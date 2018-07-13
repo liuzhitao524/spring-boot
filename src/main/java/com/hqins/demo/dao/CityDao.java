@@ -13,4 +13,5 @@ public interface CityDao {
     List<CityInfoVO> findByName(@Param("cityName") String cityName);
     Integer  deleteByName(@Param("cityName") String cityName);
     Integer  insertOneCity(CityDTO city);
+    Integer     updateCities(CityDTO city);
 }

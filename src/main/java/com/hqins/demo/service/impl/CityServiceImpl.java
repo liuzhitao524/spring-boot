@@ -33,4 +33,9 @@ public class CityServiceImpl implements CityService {
        Integer id = cityDao.insertOneCity(city);
        return StringUtils.isNotBlank(id.toString());
     }
+
+    @Override
+    public Integer updateCities(CityDTO city){
+        return cityDao.updateCities(city);
+    }
 }
