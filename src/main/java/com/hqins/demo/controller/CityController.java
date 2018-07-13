@@ -21,8 +21,10 @@ import java.util.List;
 public class CityController {
     @Autowired
     private CityService cityService;
+
     @Resource
     DemoResult demoResult;
+
     @RequestMapping(value ="/api/city",method= RequestMethod.GET)
     @ResponseBody
     public DemoResult findOneCity(@RequestParam(value="cityName") String cityName, HttpServletResponse response){

@@ -33,7 +33,7 @@ public class DemoResult implements Serializable {
     }
 
     private boolean isSuccess = true;
-private String message = "成功";
-private Object content;
+    private String message = "成功";
+    private Object content;
 
 }
