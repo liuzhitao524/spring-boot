@@ -38,4 +38,10 @@ public class CityServiceImpl implements CityService {
     public Integer updateCities(CityDTO city){
         return cityDao.updateCities(city);
     }
+
+    @Override
+    public City findCityById(Integer id){
+        return cityDao.findCityById(id);
+    }
+
 }

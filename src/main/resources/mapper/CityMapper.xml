@@ -5,10 +5,21 @@
         <result column="city_name" property="cityName"/>
         <result column="description" property="description"/>
     </resultMap>
+    <resultMap id ="cityResult" type="com.hqins.demo.domain.City">
+        <result column="id" property="id"/>
+        <result column="province_id" property="provinceId"/>
+        <result column="city_name" property="cityName"/>
+        <result column="description" property="description"/>
+    </resultMap>
+
 
     <sql id="Base_Column_List">
      city_name,description
     </sql>
+    <!--Query city by id-->
+    <select id="findCityById" resultMap="cityResult" parameterType="java.lang.Integer">
+        select * from city where id=#{id}
+    </select>
     <!-- Query  by cityname-->
     <select id="findByName" resultMap="cityInfoList" parameterType="java.lang.String">
         select

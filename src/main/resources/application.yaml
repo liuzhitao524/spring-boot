@@ -1,9 +1,29 @@
 spring:
   datasource:
-    password: 12345
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/hqins?useSSL=false&useUnicode=true&characterEncoding=utf8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
-    username: lzt
+      password: 12345
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/hqins?useSSL=false&useUnicode=true&characterEncoding=utf8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+      username: lzt
+#    slave:
+#      password: 12345
+#      driver-class-name: com.mysql.cj.jdbc.Driver
+#      url: jdbc:mysql://localhost:3306/hqins_salve?useSSL=false&useUnicode=true&characterEncoding=utf8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+#      username: lzt
+  redis:
+      database: 0
+      host: 127.0.0.1
+      port: 6379
+      password: 12345
+      pool:
+        max-active: 8
+        max-wait: 1
+        max-idle: 8
+        min-idle: 1
+
+
+
+
 mybatis:
-  mapper-locations: classpath:mapper/*xml
+  mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.hqins.demo.domain
+

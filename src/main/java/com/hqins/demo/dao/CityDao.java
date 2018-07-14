@@ -1,6 +1,7 @@
 package com.hqins.demo.dao;
 
 
+import com.hqins.demo.domain.City;
 import com.hqins.demo.dto.CityDTO;
 import com.hqins.demo.vo.CityInfoVO;
 import org.apache.ibatis.annotations.Param;
@@ -14,4 +15,5 @@ public interface CityDao {
     Integer  deleteByName(@Param("cityName") String cityName);
     Integer  insertOneCity(CityDTO city);
     Integer     updateCities(CityDTO city);
+    City findCityById(@Param("id") Integer id); // just test,to vo
 }
