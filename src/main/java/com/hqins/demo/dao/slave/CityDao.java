@@ -1,7 +1,7 @@
-package com.hqins.demo.dao;
+package com.hqins.demo.dao.slave;
 
 
-import com.hqins.demo.domain.City;
+import com.hqins.demo.domain.slave.City;
 import com.hqins.demo.dto.CityDTO;
 import com.hqins.demo.vo.CityInfoVO;
 import org.apache.ibatis.annotations.Param;

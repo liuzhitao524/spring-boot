@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.hqins.demo.dao.CityDao">
+<mapper namespace="com.hqins.demo.dao.slave.CityDao">
     <resultMap id="cityInfoList" type="com.hqins.demo.vo.CityInfoVO">
         <result column="city_name" property="cityName"/>
         <result column="description" property="description"/>
     </resultMap>
-    <resultMap id ="cityResult" type="com.hqins.demo.domain.City">
+    <resultMap id ="cityResult" type="com.hqins.demo.domain.slave.City">
         <result column="id" property="id"/>
         <result column="province_id" property="provinceId"/>
         <result column="city_name" property="cityName"/>

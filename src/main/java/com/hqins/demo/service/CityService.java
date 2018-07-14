@@ -1,6 +1,6 @@
 package com.hqins.demo.service;
 
-import com.hqins.demo.domain.City;
+import com.hqins.demo.domain.slave.City;
 import com.hqins.demo.dto.CityDTO;
 import com.hqins.demo.vo.CityInfoVO;
 

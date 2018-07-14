@@ -2,10 +2,13 @@ package com.hqins.demo.controller;
 
 import com.hqins.demo.common.DemoResult;
 
-import com.hqins.demo.domain.City;
+import com.hqins.demo.domain.master.User;
+import com.hqins.demo.domain.slave.City;
+
 import com.hqins.demo.dto.CityDTO;
 import com.hqins.demo.service.CityService;
 
+import com.hqins.demo.service.UserService;
 import com.hqins.demo.vo.CityInfoVO;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,13 +30,38 @@ public class CityController {
     @Autowired
     private CityService cityService;
 
-//    @Resource
-////    private DemoResult demoResult;
+    @Autowired
+    private UserService userService;
+
+
+
     @Autowired
     private ApplicationContext applicationContext;
 
     @Resource
     private RedisTemplate<String,City> redisTemplate;
+
+    @RequestMapping(value = "/api/user", method = RequestMethod.GET)
+    @ResponseBody
+    public DemoResult findUserById(@RequestParam(value = "id") Integer id) {
+        DemoResult demoResult = applicationContext.getBean(DemoResult.class);
+        User user = null;
+        user = userService.findUserById(id);
+        if(user == null)
+        {
+            demoResult.setSuccess(false);
+            demoResult.setMessage("Not Found");
+
+        }else{
+            demoResult.setSuccess(true);
+            demoResult.setMessage("Success");
+            demoResult.setContent(user);
+        }
+        return demoResult;
+
+
+    }
+
 
     @RequestMapping(value="/api/city/{id}",method=RequestMethod.GET)
     @ResponseBody

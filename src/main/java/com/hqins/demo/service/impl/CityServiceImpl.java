@@ -1,7 +1,7 @@
 package com.hqins.demo.service.impl;
 
-import com.hqins.demo.dao.CityDao;
-import com.hqins.demo.domain.City;
+import com.hqins.demo.dao.slave.CityDao;
+import com.hqins.demo.domain.slave.City;
 import com.hqins.demo.dto.CityDTO;
 import com.hqins.demo.service.CityService;
 

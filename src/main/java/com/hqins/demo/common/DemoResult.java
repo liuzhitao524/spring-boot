@@ -2,7 +2,6 @@ package com.hqins.demo.common;
 
 import org.springframework.context.annotation.Scope;
 
-import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Component;
 
 import java.io.Serializable;
@@ -10,7 +9,7 @@ import java.io.Serializable;
 @Component
 @Scope(scopeName = "prototype")
 public class DemoResult implements  Serializable{
-    private static  final long serialVersionUID =-1L;
+    private static  final long serialVersionUID =2018071401L;
 
 
     private boolean isSuccess = true;

@@ -1,10 +1,10 @@
-package com.hqins.demo.domain;
+package com.hqins.demo.domain.slave;
 
 
 
 import java.io.Serializable;
 public class City implements  Serializable {
-    private static  final long serialVersionUID =-1L;
+    private static  final long serialVersionUID = 2018071402L;
     private long id;
     private long provinceId;
     private String cityName;
